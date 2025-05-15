@@ -38,7 +38,7 @@ jobs:
         run: go build -o myapp .
 
       - name: Upload binary
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v2
         with:
           name: myapp-binary
           path: .
