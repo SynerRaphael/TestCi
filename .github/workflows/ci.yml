@@ -33,3 +33,12 @@ jobs:
 
       - name: Run tests
         run: go test ./...
+
+      - name: Build binary
+        run: go build -o myapp .
+
+      - name: Upload binary
+        uses: actions/upload-artifact@v3
+        with:
+          name: myapp-binary
+          path: myapp
