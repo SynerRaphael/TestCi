@@ -13,7 +13,7 @@ jobs:
         - name: Lint
           uses: golangci/golangci-lint-action@v3
           with:
-            version: v2.1.0  # adapte à la dernière version stable
+            version: latest
             working-directory: .
 
         - name: Checkout code
