@@ -58,4 +58,6 @@ jobs:
         with:
           context: .
           push: true
-          tags: ghcr.io/synerraphael/testci:latest
+          tags: |
+              ghcr.io/synerraphael/testci:${{ github.sha }}
+              ghcr.io/synerraphael/testci:latest
