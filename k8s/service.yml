@@ -3,10 +3,10 @@ kind: Service
 metadata:
   name: testci
 spec:
+  type: NodePort   # ✅ au lieu de LoadBalancer
   selector:
     app: testci
   ports:
-  - protocol: TCP
-    port: 80
-    targetPort: 3000
-  type: LoadBalancer
+    - port: 80
+      targetPort: 3000
+      nodePort: 30080  # facultatif, ou laisse Kubernetes en choisir un
