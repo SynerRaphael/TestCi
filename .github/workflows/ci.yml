@@ -42,3 +42,6 @@ jobs:
         with:
           name: myapp-binary
           path: .
+          
+      - name: Check formatting
+        run: test -z "$(gofmt -l .)"
