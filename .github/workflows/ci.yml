@@ -10,6 +10,12 @@ jobs:
     build-and-test:
       runs-on: ubuntu-latest
       steps:
+        - name: Init go mod if needed
+          run: |
+                if [ ! -f go.mod ]; then
+                    go mod init exemple.com/tonprojet
+                    go mod tidy
+                fi
         - name: Lint
           uses: golangci/golangci-lint-action@v3
           with:
