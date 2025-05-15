@@ -10,16 +10,11 @@ jobs:
     build-and-test:
       runs-on: ubuntu-latest
       steps:
-        - name: Init go mod if needed
-          run: |
-                if [ ! -f go.mod ]; then
-                    go mod init exemple.com/tonprojet
-                    go mod tidy
-                fi
         - name: Lint
           uses: golangci/golangci-lint-action@v3
           with:
             version: v1.55.2  # adapte à la dernière version stable
+            working-directory: ./  # chemin vers le répertoire de votre projet Go
 
         - name: Checkout code
           uses: actions/checkout@v3
