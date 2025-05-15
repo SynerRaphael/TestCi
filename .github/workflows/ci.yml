@@ -13,8 +13,7 @@ jobs:
         - name: Lint
           uses: golangci/golangci-lint-action@v3
           with:
-            version: v1.55.2  # adapte à la dernière version stable
-            working-directory: .  # chemin vers le répertoire de votre projet Go
+            version: v2.1.0  # adapte à la dernière version stable
 
         - name: Checkout code
           uses: actions/checkout@v3
