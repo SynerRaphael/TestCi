@@ -60,6 +60,7 @@ jobs:
           push: true
           tags: ghcr.io/synerraphael/testci:latest
   build-and-push:
+    needs: build-and-test
     runs-on: ubuntu-latest
 
     steps:
