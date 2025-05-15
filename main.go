@@ -12,7 +12,7 @@ func main() {
 
 	// Route simple pour Hello World
 	router.GET("/", func(c *gin.Context) {
-		c.String(200, "Hello, World!")
+		c.String(200, "Holàààààà")
 	})
 
 	if err := router.SetTrustedProxies([]string{"127.0.0.1"}); err != nil {
