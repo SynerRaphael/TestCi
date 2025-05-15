@@ -1,5 +1,5 @@
 # Étape 1 : builder le binaire
-FROM golang:1.21 AS builder
+FROM golang:1.24.2 AS builder
 
 WORKDIR /app
 
