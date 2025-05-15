@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: testci
+  labels:
+    app: testci
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: testci
+  template:
+    metadata:
+      labels:
+        app: testci
+    spec:
+      containers:
+      - name: testci
+        image: ghcr.io/synerraphael/testci:latest
+        ports:
+        - containerPort: 3000
