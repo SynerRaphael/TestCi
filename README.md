@@ -1,0 +1,1 @@
+![CI](https://github.com/SynerRaphael/TestCi/actions/workflows/ci.yml/badge.svg)
