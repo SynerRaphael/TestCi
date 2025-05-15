@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: testci
-        image: ghcr.io/synerraphael/testci:latest
+        image: ghcr.io/synerraphael/testci:abc1234
         imagePullPolicy: Always
         ports:
         - containerPort: 3000

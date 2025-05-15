@@ -59,3 +59,12 @@ jobs:
           context: .
           push: true
           tags: ghcr.io/synerraphael/testci:latest
+      - name: Update deployment.yaml with new tag
+        run: |
+          TAG=${GITHUB_SHA::7}
+          sed -i "s|ghcr.io/synerraphael/testci:.*|ghcr.io/synerraphael/testci:$TAG|g" k8s/deployment.yaml
+          git config user.name "CI Bot"
+          git config user.email "ci@yourdomain.com"
+          git add k8s/deployment.yaml
+          git commit -m "ci: update image tag to $TAG"
+          git push
