@@ -13,6 +13,8 @@ spec:
         metadata:
             labels:
                 app: testci
+            annotations:
+                app.kubernetes.io/redeploy-timestamp: '2024-05-15T13:24:00Z' # ← sera remplacée dynamiquement
         spec:
             containers:
                 - name: testci
