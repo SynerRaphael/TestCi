@@ -59,9 +59,3 @@ jobs:
                   context: .
                   push: true
                   tags: ghcr.io/synerraphael/testci:latest
-            - name: Set timestamp
-              id: date
-              run: echo "timestamp=$(date -u +%Y-%m-%dT%H:%M:%SZ)" >> "$GITHUB_OUTPUT"
-            - name: Update redeploy timestamp
-              run: |
-                  sed -i "s|app.kubernetes.io/redeploy-timestamp: \".*\"|app.kubernetes.io/redeploy-timestamp: \"${{ steps.date.outputs.timestamp }}\"|g" k8s/deployment.yml
